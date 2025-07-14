@@ -2,73 +2,128 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Ersin Tepegoz | Data Analyst Portfolio</title>
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap" rel="stylesheet" />
+
   <style>
     body {
-      font-family: Arial, sans-serif;
-      max-width: 800px;
-      margin: auto;
-      padding: 20px;
-      line-height: 1.6;
-      background-color: #f9f9f9;
+      font-family: 'Poppins', sans-serif;
+      max-width: 900px;
+      margin: 20px auto;
+      padding: 15px 20px;
+      background-color: #f0f2f5;
       color: #333;
+      line-height: 1.6;
     }
+
     h1, h2 {
+      font-weight: 700;
       color: #222;
     }
+
+    h1 {
+      margin-bottom: 0;
+    }
+
+    p.subtitle {
+      margin-top: 5px;
+      color: #555;
+      font-weight: 500;
+    }
+
     .project {
       background-color: #fff;
-      border: 1px solid #ddd;
-      padding: 15px;
-      margin: 15px 0;
-      border-radius: 5px;
-      box-shadow: 0 1px 3px rgba(0,0,0,0.05);
+      border-radius: 8px;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+      padding: 20px;
+      margin: 20px 0;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
     }
-    a {
-      color: #007acc;
+
+    .project:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 10px 20px rgba(0,0,0,0.15);
+    }
+
+    a.button, a {
+      display: inline-block;
+      background-color: #007bff;
+      color: white;
+      padding: 10px 18px;
+      border-radius: 5px;
+      text-decoration: none;
+      font-weight: 600;
+      transition: background-color 0.3s ease;
+      margin-top: 10px;
+    }
+
+    a.button:hover, a:hover {
+      background-color: #0056b3;
       text-decoration: none;
     }
-    a:hover {
+
+    a:not(.button) {
+      background-color: transparent;
+      color: #007acc;
+      padding: 0;
+      font-weight: normal;
+    }
+
+    a:not(.button):hover {
       text-decoration: underline;
+      background-color: transparent;
+      color: #0056b3;
+    }
+
+    /* Responsive tweaks */
+    @media (max-width: 600px) {
+      body {
+        padding: 10px 15px;
+      }
+      .project {
+        padding: 15px;
+      }
     }
   </style>
 </head>
 <body>
 
   <h1>Ersin Tepegoz</h1>
-  <p>Data Analyst | Python, SQL, Data Visualization | IBM Certified</p>
+  <p class="subtitle">Data Analyst | Python, SQL, Data Visualization | IBM Certified</p>
 
   <h2>Projects</h2>
 
   <div class="project">
     <h3>Cloud-Based Data Analysis</h3>
     <p>This project contains a comprehensive cloud-based data analysis project focused on eCommerce user behavior and sales performance for October 2019. The project leverages Google BigQuery for data processing and Looker Studio for interactive visualizations.</p>
-    <a href="https://github.com/tepegozersin/Cloud-Based-Data-Analysis.git" target="_blank">View on GitHub</a>
+    <a href="https://github.com/tepegozersin/Cloud-Based-Data-Analysis.git" target="_blank" class="button">View on GitHub</a>
   </div>
 
   <div class="project">
     <h3>HR Income Entry Control Dashboard</h3>
     <p>This project analyzes salary input errors entered by HR teams, with a focus on identifying anomalies in the income records of employees working in the tourism and hospitality industry.</p>
-    <a href="https://github.com/tepegozersin/powerbi-hr-salary-anomaly.git" target="_blank">View on GitHub</a>
+    <a href="https://github.com/tepegozersin/powerbi-hr-salary-anomaly.git" target="_blank" class="button">View on GitHub</a>
   </div>
   
   <div class="project">
     <h3>NYC Airbnb Analysis</h3>
     <p>This project explores the spatial and pricing trends of Airbnb listings in New York City using geospatial and statistical analysis.</p>
-    <a href="https://github.com/tepegozersin/nyc-2019-airbnb-analysis.git" target="_blank">View on GitHub</a>
+    <a href="https://github.com/tepegozersin/nyc-2019-airbnb-analysis.git" target="_blank" class="button">View on GitHub</a>
   </div>
 
   <div class="project">
     <h3>Emerging Tech Trends in Software</h3>
     <p>This project analyzes trends in programming languages, databases, and developer preferences using data from multiple sources, including the 2019 Stack Overflow Developer Survey and GitHub job postings. </p>
-    <a href="https://github.com/tepegozersin/DataAnalyticsProject.git" target="_blank">View on GitHub</a>
+    <a href="https://github.com/tepegozersin/DataAnalyticsProject.git" target="_blank" class="button">View on GitHub</a>
   </div>
 
   <div class="project">
     <h3>US Housing Market Macroeconomic Factors Analysis</h3>
     <p>This project analyzes the US housing market based on various macroeconomic factors. The goal is to understand how different economic indicators relate to housing prices over time.</p>
-    <a href="https://github.com/tepegozersin/us_housing_market_analysis.git" target="_blank">View on GitHub</a>
+    <a href="https://github.com/tepegozersin/us_housing_market_analysis.git" target="_blank" class="button">View on GitHub</a>
   </div>
 
   <h2>Contact</h2>
@@ -79,8 +134,8 @@
 
   <h2>Resume / CV</h2>
   <p>
-  You can download or view my CV here: 
-  <a href="CV_Resume.pdf" target="_blank" rel="noopener noreferrer">Download CV (PDF)</a>
+    You can download or view my CV here: <br>
+    <a href="CV_Resume.pdf" target="_blank" rel="noopener noreferrer" class="button">Download CV (PDF)</a>
   </p>
 
 </body>
