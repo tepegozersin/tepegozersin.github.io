@@ -7,40 +7,48 @@
 
   <!-- Google Fonts -->
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap" rel="stylesheet" />
+  
+  <!-- Font Awesome (ikonlar için) -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 
   <style>
+    :root {
+      --bg-color: #f0f2f5;
+      --text-color: #333;
+      --card-bg: #fff;
+      --link-color: #007bff;
+    }
+
+    body.dark-mode {
+      --bg-color: #121212;
+      --text-color: #e0e0e0;
+      --card-bg: #1e1e1e;
+      --link-color: #4da3ff;
+    }
+
     body {
       font-family: 'Poppins', sans-serif;
+      background-color: var(--bg-color);
+      color: var(--text-color);
       max-width: 900px;
       margin: 20px auto;
       padding: 15px 20px;
-      background-color: #f0f2f5;
-      color: #333;
       line-height: 1.6;
+      transition: background-color 0.3s ease, color 0.3s ease;
     }
 
     h1, h2 {
       font-weight: 700;
-      color: #222;
-    }
-
-    h1 {
-      margin-bottom: 0;
-    }
-
-    p.subtitle {
-      margin-top: 5px;
-      color: #555;
-      font-weight: 500;
+      color: var(--text-color);
     }
 
     .project {
-      background-color: #fff;
+      background-color: var(--card-bg);
       border-radius: 8px;
       box-shadow: 0 4px 8px rgba(0,0,0,0.1);
       padding: 20px;
       margin: 20px 0;
-      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      transition: transform 0.3s ease, box-shadow 0.3s ease, background-color 0.3s ease;
     }
 
     .project:hover {
@@ -48,9 +56,9 @@
       box-shadow: 0 10px 20px rgba(0,0,0,0.15);
     }
 
-    a.button, a {
+    a.button {
       display: inline-block;
-      background-color: #007bff;
+      background-color: var(--link-color);
       color: white;
       padding: 10px 18px;
       border-radius: 5px;
@@ -60,39 +68,69 @@
       margin-top: 10px;
     }
 
-    a.button:hover, a:hover {
+    a.button:hover {
       background-color: #0056b3;
-      text-decoration: none;
     }
 
     a:not(.button) {
-      background-color: transparent;
-      color: #007acc;
-      padding: 0;
-      font-weight: normal;
+      color: var(--link-color);
+      text-decoration: none;
     }
 
     a:not(.button):hover {
       text-decoration: underline;
-      background-color: transparent;
+    }
+
+    .toggle-btn {
+      position: fixed;
+      top: 20px;
+      right: 20px;
+      background-color: var(--link-color);
+      color: white;
+      border: none;
+      border-radius: 5px;
+      padding: 8px 14px;
+      cursor: pointer;
+      font-size: 0.9em;
+      z-index: 1000;
+    }
+
+    .social-icons i {
+      font-size: 1.5em;
+      margin-right: 12px;
+      color: var(--link-color);
+      transition: color 0.3s;
+    }
+
+    .social-icons i:hover {
       color: #0056b3;
     }
 
-    /* Responsive tweaks */
-    @media (max-width: 600px) {
-      body {
-        padding: 10px 15px;
-      }
-      .project {
-        padding: 15px;
-      }
+    footer {
+      text-align: center;
+      margin-top: 40px;
+      font-size: 0.9em;
+      color: #888;
     }
   </style>
 </head>
 <body>
 
+  <!-- Dark Mode Toggle Button -->
+  <button class="toggle-btn" onclick="toggleDarkMode()">🌙 Dark Mode</button>
+
   <h1>Ersin Tepegoz</h1>
-  <p class="subtitle">Data Analyst | Python, SQL, Data Visualization | IBM Certified</p>
+  <p>Data Analyst | Python, SQL, Data Visualization | IBM Certified</p>
+
+  <h2>About Me</h2>
+  <p>
+  I'm Ersin Tepegoz, a Data Analyst with a background in web programming and a passion for uncovering insights through data. I enjoy working with tools like Python, SQL, Power BI, and Looker Studio to make data understandable and actionable.
+  <br><br>
+  I’ve completed multiple freelance projects involving web scraping, data cleaning, and dashboard creation, allowing me to gain hands-on experience with real-world business data.
+  <br><br>
+  I'm particularly interested in using data storytelling to support decision-making processes and enhance operational efficiency within organizations.
+  </p>
+
 
   <h2>Projects</h2>
 
@@ -107,7 +145,7 @@
     <p>This project analyzes salary input errors entered by HR teams, with a focus on identifying anomalies in the income records of employees working in the tourism and hospitality industry.</p>
     <a href="https://github.com/tepegozersin/powerbi-hr-salary-anomaly.git" target="_blank" class="button">View on GitHub</a>
   </div>
-  
+
   <div class="project">
     <h3>NYC Airbnb Analysis</h3>
     <p>This project explores the spatial and pricing trends of Airbnb listings in New York City using geospatial and statistical analysis.</p>
@@ -116,7 +154,7 @@
 
   <div class="project">
     <h3>Emerging Tech Trends in Software</h3>
-    <p>This project analyzes trends in programming languages, databases, and developer preferences using data from multiple sources, including the 2019 Stack Overflow Developer Survey and GitHub job postings. </p>
+    <p>This project analyzes trends in programming languages, databases, and developer preferences using data from multiple sources, including the 2019 Stack Overflow Developer Survey and GitHub job postings.</p>
     <a href="https://github.com/tepegozersin/DataAnalyticsProject.git" target="_blank" class="button">View on GitHub</a>
   </div>
 
@@ -127,9 +165,10 @@
   </div>
 
   <h2>Contact</h2>
-  <p>
-    📧 <a href="mailto:tepegozersin@gmail.com">tepegozersin@gmail.com</a><br>
-    🔗 <a href="https://www.linkedin.com/in/ersin-tepeg%C3%B6z-8710ab366/" target="_blank">LinkedIn Profile</a>
+  <p class="social-icons">
+    <a href="mailto:tepegozersin@gmail.com" title="Email"><i class="fas fa-envelope"></i></a>
+    <a href="https://github.com/tepegozersin" target="_blank" title="GitHub"><i class="fab fa-github"></i></a>
+    <a href="https://www.linkedin.com/in/ersin-tepeg%C3%B6z-8710ab366/" target="_blank" title="LinkedIn"><i class="fab fa-linkedin"></i></a>
   </p>
 
   <h2>Resume / CV</h2>
@@ -138,5 +177,14 @@
     <a href="CV_Resume.pdf" target="_blank" rel="noopener noreferrer" class="button">Download CV (PDF)</a>
   </p>
 
+  <footer>
+    © 2025 Ersin Tepegoz | All rights reserved
+  </footer>
+
+  <script>
+    function toggleDarkMode() {
+      document.body.classList.toggle("dark-mode");
+    }
+  </script>
 </body>
 </html>
